@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Password_Guardian.Views.SignUp"
+             Title="SignUp"
+             Shell.FlyoutBehavior="Disabled">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
+    </Shell.BackButtonBehavior>
+    
+    <VerticalStackLayout
+            Spacing="15"
+            Padding="30,0"
+            VerticalOptions="Center">
+        <Label 
+            Text="Sign Up!"
+            FontSize="20"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Text="You can create 1 account per device"
+            FontSize="12"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label 
+            Text="Name"
+            FontSize="14"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtName"
+               Text=""
+               Placeholder="Name"
+               WidthRequest="250"
+               HorizontalOptions="Center" />
+
+        <Label 
+            Text="Username"
+            FontSize="14"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtUserName"
+               Text=""
+               Placeholder="Username"
+               WidthRequest="250"
+               HorizontalOptions="Center" />
+
+        <Label 
+            Text="Password"
+            FontSize="14"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtPassword"
+               Text=""
+               Placeholder="Password"
+               IsPassword="True"
+               WidthRequest="250"
+               HorizontalOptions="Center" />
+
+        <Label 
+            Text="Confirm Password"
+            FontSize="14"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtConfirmPassword"
+               Text=""
+               Placeholder="Confirm Password"
+               IsPassword="True"
+               WidthRequest="250"
+               HorizontalOptions="Center" />
+
+        <Label 
+            Text=""
+            x:Name="lblErrorSummary"
+            FontSize="14"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            IsVisible="False" />
+
+        <Button
+                    x:Name="SignUpBtn"
+                    Text="Sign Up!"
+                    SemanticProperties.Hint="Confirm Entries and Sign Up"
+                    Clicked="SignUpBtn_Clicked"
+                    HorizontalOptions="Center"/>
+
+    </VerticalStackLayout>
+</ContentPage>

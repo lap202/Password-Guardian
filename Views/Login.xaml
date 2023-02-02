@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Password_Guardian.Views.Login"
+             Title="Login"
+             Shell.FlyoutBehavior="Disabled">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
+    </Shell.BackButtonBehavior>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Password Gaurdian"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Username"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="Username"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Entry x:Name="txtUserName"
+               Placeholder="Username"
+               WidthRequest="250"
+               HorizontalOptions="Center" />
+
+            <Label
+                Text="Password"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="Password"
+                FontSize="18"
+                HorizontalOptions="Center" />
+            <Entry x:Name="txtPassword"
+                   Placeholder="Password"
+                   IsPassword="True"
+                   WidthRequest="250"
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Button
+                x:Name="LoginBtn"
+                Text="Login"
+                SemanticProperties.Hint="Click to Login"
+                Clicked="LoginBtn_Clicked"
+                HorizontalOptions="Center"/>
+
+            <Label
+            x:Name="lblLoginError"
+            Text="The Username or Password entered is incorrect"
+            TextColor="Red"
+            SemanticProperties.Description="The username or password is incorrect"
+            IsVisible="False"
+            HorizontalOptions="CenterAndExpand"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

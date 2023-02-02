@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Password_Guardian.Views.HomePage"
+             Title="HomePage">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
+    </Shell.BackButtonBehavior>
+    <ScrollView Margin="20">
+        <!--Card 1-->
+        <VerticalStackLayout>
+            <Image
+                Source="thevault.png"
+                SemanticProperties.Description="AI generated vault"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label 
+            Text="The Vault"
+            FontSize="Header"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <Border x:Name="card1"
+                IsVisible="false"
+                WidthRequest="380"
+                HeightRequest="215"
+                Stroke="purple"
+                BackgroundColor="Black"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 10 60"
+                Margin="10">
+                <Border.Shadow>
+                    <Shadow Brush="Purple"
+                        Offset="8,8"
+                        Opacity=".8"/>
+
+                </Border.Shadow>
+
+                <VerticalStackLayout>
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center">
+                    <Label
+                    x:Name="lblPasscardName1"
+                    Text="#PASSCARD NAME"
+                    FontSize="Default"
+                    Margin="13"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+                    <Button
+                    x:Name="Card1DeleteBtn"
+                        IsVisible="false"
+                    Text="Delete Card"
+                    TextColor="Red"
+                    HeightRequest="40"
+                        MaximumHeightRequest="34"
+                        MinimumHeightRequest="30"
+                    WidthRequest="110"
+                    Margin="6"
+                    SemanticProperties.Hint="Delete"
+                    Clicked="Card1DeleteBtn_Clicked"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <Entry x:Name="txtUsernameBox1"
+               Text="#PASSCARD USERNAME"
+               TextColor="White"
+               IsEnabled="False"
+               WidthRequest="250"
+                      Margin="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+                    <Entry x:Name="txtPasswordBox1"
+               Text="#PASSCARD PASSWORD"
+               TextColor="White"
+               IsEnabled="False"
+               IsPassword="True"
+               WidthRequest="250"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+                    <HorizontalStackLayout
+                        x:Name="Card1DefaultBtns"
+                    HorizontalOptions="Center">
+                        <Button
+                    x:Name="viewPasswordBtn"
+                    Text="View"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="viewPasswordBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="copyToClipboardBtn"
+                    Text="Copy"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="copyToClipboardBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="EditCard1Btn"
+                    Text="Edit"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="EditCard1Btn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout
+                        x:Name="Card1EditButtons"
+                        IsVisible="false"
+                    HorizontalOptions="Center">
+
+                        <Button
+                    x:Name="view2PasswordBtn"
+                    Text="View"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="viewPasswordBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                        
+                        <Button
+                    x:Name="Card1CancelEditBtn"
+                    Text="Cancel"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="CancelEditBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="Card1SaveEditBtn"
+                    Text="Save"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="Card1SaveEditBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!--Card 2-->
+            <Border x:Name="card2"
+                IsVisible="false"
+                WidthRequest="380"
+                HeightRequest="215"
+                Stroke="purple"
+                BackgroundColor="Black"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 10 60"
+                Margin="10">
+                <Border.Shadow>
+                    <Shadow Brush="Purple"
+                        Offset="8,8"
+                        Opacity=".8"/>
+
+                </Border.Shadow>
+
+                <VerticalStackLayout>
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center">
+                        <Label
+                    x:Name="lblPasscardName2"
+                    Text="#PASSCARD NAME"
+                    FontSize="Default"
+                    Margin="13"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+                        <Button
+                    x:Name="Card2DeleteBtn"
+                        IsVisible="false"
+                    Text="Delete Card"
+                    TextColor="Red"
+                    HeightRequest="40"
+                        MaximumHeightRequest="34"
+                        MinimumHeightRequest="30"
+                    WidthRequest="110"
+                    Margin="6"
+                    SemanticProperties.Hint="Delete"
+                    Clicked="Card2DeleteBtn_Clicked"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <Entry x:Name="txtUsernameBox2"
+               Text="#PASSCARD USERNAME"
+                     TextColor="White"
+               IsEnabled="False"
+               WidthRequest="250"
+                     Margin="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+                    <Entry x:Name="txtPasswordBox2"
+                           TextColor="White"
+               IsEnabled="False"
+               Text="#PASSCARD PASSWORD"
+               IsPassword="True"
+               WidthRequest="250"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+                    <HorizontalStackLayout
+                        x:Name="Card2DefaultBtns"
+                    HorizontalOptions="Center">
+                        <Button
+                    x:Name="viewPasswordBtn2"
+                    Text="View"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="viewPasswordBtn2_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="copyToClipboardBtn2"
+                    Text="Copy"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="copyToClipboardBtn2_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="EditCard2Btn"
+                    Text="Edit"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="EditCard2Btn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout
+                        x:Name="Card2EditButtons"
+                        IsVisible="false"
+                    HorizontalOptions="Center">
+                        <Button
+                    x:Name="view2PasswordBtn2"
+                    Text="View"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="viewPasswordBtn2_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                        <Button
+                    x:Name="Card2CancelEditBtn"
+                    Text="Cancel"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="CancelEditBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="Card2SaveEditBtn"
+                    Text="Save"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="Card2SaveEditBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <!--Card 3-->
+            <Border x:Name="card3"
+                IsVisible="false"
+                WidthRequest="380"
+                HeightRequest="215"
+                Stroke="purple"
+                BackgroundColor="Black"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 10 60"
+                Margin="10">
+                <Border.Shadow>
+                    <Shadow Brush="Purple"
+                        Offset="8,8"
+                        Opacity=".8"/>
+
+                </Border.Shadow>
+
+                <VerticalStackLayout>
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center">
+                        <Label
+                    x:Name="lblPasscardName3"
+                    Text="#PASSCARD NAME"
+                    FontSize="Default"
+                    Margin="13"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+                        <Button
+                    x:Name="Card3DeleteBtn"
+                        IsVisible="false"
+                    Text="Delete Card"
+                    TextColor="Red"
+                    HeightRequest="40"
+                        MaximumHeightRequest="34"
+                        MinimumHeightRequest="30"
+                    WidthRequest="110"
+                    Margin="6"
+                    SemanticProperties.Hint="Delete"
+                    Clicked="Card3DeleteBtn_Clicked"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <Entry x:Name="txtUsernameBox3"
+               Text="#PASSCARD USERNAME"
+                           TextColor="White"
+               IsEnabled="False"
+               WidthRequest="250"
+                           Margin="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+                    <Entry x:Name="txtPasswordBox3"
+                           TextColor="White"
+               IsEnabled="False"
+               Text="#PASSCARD PASSWORD"
+               IsPassword="True"
+               WidthRequest="250"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+                    <HorizontalStackLayout
+                        x:Name="Card3DefaultBtns"
+                    HorizontalOptions="Center">
+                        <Button
+                    x:Name="viewPasswordBtn3"
+                    Text="View"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="viewPasswordBtn3_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="copyToClipboardBtn3"
+                    Text="Copy"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="copyToClipboardBtn3_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="EditCard3Btn"
+                    Text="Edit"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="EditCard3Btn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout
+                        x:Name="Card3EditButtons"
+                        IsVisible="false"
+                    HorizontalOptions="Center">
+                        <Button
+                    x:Name="view2PasswordBtn3"
+                    Text="View"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="viewPasswordBtn3_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                        <Button
+                    x:Name="Card3CancelEditBtn"
+                    Text="Cancel"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="CancelEditBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="Card3SaveEditBtn"
+                    Text="Save"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="Card3SaveEditBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <!--Card 4-->
+            <Border x:Name="card4"
+                IsVisible="false"
+                WidthRequest="380"
+                HeightRequest="215"
+                Stroke="purple"
+                BackgroundColor="Black"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 10 60"
+                Margin="10">
+                <Border.Shadow>
+                    <Shadow Brush="Purple"
+                        Offset="8,8"
+                        Opacity=".8"/>
+
+                </Border.Shadow>
+
+                <VerticalStackLayout>
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center">
+                        <Label
+                    x:Name="lblPasscardName4"
+                    Text="#PASSCARD NAME"
+                    FontSize="Default"
+                    Margin="13"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+                        <Button
+                    x:Name="Card4DeleteBtn"
+                        IsVisible="false"
+                    Text="Delete Card"
+                    TextColor="Red"
+                    HeightRequest="40"
+                        MaximumHeightRequest="34"
+                        MinimumHeightRequest="30"
+                    WidthRequest="110"
+                    Margin="6"
+                    SemanticProperties.Hint="Delete"
+                    Clicked="Card4DeleteBtn_Clicked"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <Entry x:Name="txtUsernameBox4"
+                           TextColor="White"
+               IsEnabled="False"
+               Text="#PASSCARD USERNAME"
+               WidthRequest="250"
+                           Margin="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+                    <Entry x:Name="txtPasswordBox4"
+                           TextColor="White"
+               IsEnabled="False"
+               Text="#PASSCARD PASSWORD"
+               IsPassword="True"
+               WidthRequest="250"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+                    <HorizontalStackLayout
+                        x:Name="Card4DefaultBtns"
+                    HorizontalOptions="Center">
+                        <Button
+                    x:Name="viewPasswordBtn4"
+                    Text="View"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="viewPasswordBtn4_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="copyToClipboardBtn4"
+                    Text="Copy"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="copyToClipboardBtn4_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="EditCard4Btn"
+                    Text="Edit"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy to Clipboard"
+                    Clicked="EditCard4Btn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout
+                        x:Name="Card4EditButtons"
+                        IsVisible="false"
+                    HorizontalOptions="Center">
+                        <Button
+                    x:Name="view2PasswordBtn4"
+                    Text="View"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="viewPasswordBtn4_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                        <Button
+                    x:Name="Card4CancelEditBtn"
+                    Text="Cancel"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View Password"
+                    Clicked="CancelEditBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="Card4SaveEditBtn"
+                    Text="Save"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy to Clipboard"
+                    Clicked="Card4SaveEditBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <!--Card 5-->
+            <Border x:Name="card5"
+                IsVisible="false"
+                WidthRequest="380"
+                HeightRequest="215"
+                Stroke="purple"
+                BackgroundColor="Black"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 10 60"
+                Margin="10">
+                <Border.Shadow>
+                    <Shadow Brush="Purple"
+                        Offset="8,8"
+                        Opacity=".8"/>
+
+                </Border.Shadow>
+
+                <VerticalStackLayout>
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center">
+                        <Label
+                    x:Name="lblPasscardName5"
+                    Text="#PASSCARD NAME"
+                    FontSize="Default"
+                    Margin="13"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+                        <Button
+                    x:Name="Card5DeleteBtn"
+                        IsVisible="false"
+                    Text="Delete Card"
+                    TextColor="Red"
+                    HeightRequest="40"
+                        MaximumHeightRequest="34"
+                        MinimumHeightRequest="30"
+                    WidthRequest="110"
+                    Margin="6"
+                    SemanticProperties.Hint="Delete"
+                    Clicked="Card5DeleteBtn_Clicked"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <Entry x:Name="txtUsernameBox5"
+                           TextColor="White"
+               IsEnabled="False"
+               Text="#PASSCARD USERNAME"
+               WidthRequest="250"
+                           Margin="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+                    <Entry x:Name="txtPasswordBox5"
+                           TextColor="White"
+               IsEnabled="False"
+               Text="#PASSCARD PASSWORD"
+               IsPassword="True"
+               WidthRequest="250"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+                    <HorizontalStackLayout
+                    x:Name="Card5DefaultBtns"
+                    HorizontalOptions="Center">
+                        <Button
+                    x:Name="viewPasswordBtn5"
+                    Text="View"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="viewPasswordBtn5_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="copyToClipboardBtn5"
+                    Text="Copy"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="copyToClipboardBtn5_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="EditCard5Btn"
+                    Text="Edit"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy to Clipboard"
+                    Clicked="EditCard5Btn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout
+                        x:Name="Card5EditButtons"
+                        IsVisible="false"
+                    HorizontalOptions="Center">
+                        <Button
+                    x:Name="view2PasswordBtn5"
+                    Text="View"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View"
+                    Clicked="viewPasswordBtn5_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                        <Button
+                    x:Name="Card5CancelEditBtn"
+                    Text="Cancel"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="View Password"
+                    Clicked="CancelEditBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                        <Button
+                    x:Name="Card5SaveEditBtn"
+                    Text="Save"
+                    HeightRequest="15"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy to Clipboard"
+                    Clicked="Card5SaveEditBtn_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!--Add New Password-->
+            <Border x:Name="newPassCard"
+                IsVisible="true"
+                WidthRequest="380"
+                HeightRequest="180"
+                Stroke="gray"
+                BackgroundColor="Black"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 10 60"
+                Margin="10">
+                <Border.Shadow>
+                    <Shadow Brush="Purple"
+                        Offset="8,8"
+                        Opacity=".8"/>
+
+                </Border.Shadow>
+
+                <VerticalStackLayout
+                    VerticalOptions="Center">
+                    <Button
+                    x:Name="btnAddNewPassword"
+                    Text="+"
+                    FontSize="Header"
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    Margin="8"
+                    SemanticProperties.Hint="Copy"
+                    Clicked="btnAddNewPassword_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
