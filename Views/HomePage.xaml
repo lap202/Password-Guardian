@@ -7,7 +7,7 @@
         <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
     </Shell.BackButtonBehavior>
     <ScrollView Margin="20">
-        <!--Card 1-->
+        
         <VerticalStackLayout>
             <Image
                 Source="thevault.png"
@@ -21,6 +21,7 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
+            <!--Card 1-->
             <Border x:Name="card1"
                 IsVisible="false"
                 WidthRequest="380"
