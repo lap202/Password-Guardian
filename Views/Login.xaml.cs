@@ -22,7 +22,7 @@ public partial class Login : ContentPage
         }
         else
         {
-            await Shell.Current.GoToAsync("SignUp");
+            await Shell.Current.GoToAsync(nameof(SignUp));
         }
     }
 
