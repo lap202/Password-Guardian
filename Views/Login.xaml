@@ -21,7 +21,7 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Password Gaurdian"
+                Text="Password Guardian"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
